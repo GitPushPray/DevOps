@@ -78,7 +78,7 @@ controller:
     username: "admin"
     # -- Admin password created as a secret if `controller.admin.createSecret` is true
     # @default -- <random password>
-    password:
+    password: "admin"
 
     # -- The key in the existing admin secret containing the username
     userKey: jenkins-admin-user
@@ -408,7 +408,6 @@ controller:
     - git:5.7.0
     - configuration-as-code:1932.v75cb_b_f1b_698d
     - hashicorp-vault-plugin:371.v884a_4dd60fb_6
-    - kubernetes-cli:1.12.1
 
   # If set to false, Jenkins will download the minimum required version of all dependencies.
   # -- Download the minimum required version or latest version of all dependencies
@@ -520,6 +519,16 @@ controller:
       welcome-message: |
         jenkins:
           systemMessage: Welcome to hemantharjunagari jenkins CI\CD server. This Jenkins is configured and managed 'as code'.
+
+      jenkins-casc-configs: |
+        credentials:
+          system:
+            domainCredentials:
+              - credentials:
+                  - usernamePassword:
+                      id: "dockerCredentials"
+                      username: "dockerUserName"
+                      password: "mySuperSecretPassword"
 
     # Allows adding to the top-level security JCasC section. For legacy purposes, by default, the chart includes apiToken configurations
     # -- Jenkins Config as Code security-section
