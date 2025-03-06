@@ -1,0 +1,11 @@
+apiVersion: v2
+name: demo
+description: A Helm umbrella chart for demo environment
+type: application
+version: 0.1.0
+appVersion: "1.0"
+
+dependencies:
+  - name: jenkins
+    version: "3.5.7"
+    repository: "file://../../cicd/jenkins/k8s"
