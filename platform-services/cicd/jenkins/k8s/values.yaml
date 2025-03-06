@@ -520,29 +520,29 @@ controller:
         jenkins:
           systemMessage: Welcome to hemantharjunagari jenkins CI\CD server. This Jenkins is configured and managed 'as code'.
 
-      jobs: |  # Jenkins Job Definitions
-        jenkins:
-          jobs:
-            - script: >
-                pipelineJob('MyJob') {
-                  definition {
-                    cps {
-                      script("""
-                        pipeline {
-                          agent any
-                          stages {
-                            stage('Build') {
-                              steps {
-                                echo 'Building...'
-                              }
-                            }
-                          }
-                        }
-                      """)
-                      sandbox(true)
-                    }
-                  }
-                }
+      # jobs: |  # Jenkins Job Definitions
+      #   jenkins:
+      #     jobs:
+      #       - script: >
+      #           pipelineJob('MyJob') {
+      #             definition {
+      #               cps {
+      #                 script("""
+      #                   pipeline {
+      #                     agent any
+      #                     stages {
+      #                       stage('Build') {
+      #                         steps {
+      #                           echo 'Building...'
+      #                         }
+      #                       }
+      #                     }
+      #                   }
+      #                 """)
+      #                 sandbox(true)
+      #               }
+      #             }
+      #           }
 
       jenkins-casc-configs: |
         credentials:
