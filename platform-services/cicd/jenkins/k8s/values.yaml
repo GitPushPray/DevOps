@@ -408,6 +408,7 @@ controller:
     - git:5.7.0
     - configuration-as-code:1932.v75cb_b_f1b_698d
     - hashicorp-vault-plugin:371.v884a_4dd60fb_6
+    - job-dsl:1.91
 
   # If set to false, Jenkins will download the minimum required version of all dependencies.
   # -- Download the minimum required version or latest version of all dependencies
