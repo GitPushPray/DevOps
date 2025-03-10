@@ -21,12 +21,13 @@ spec:
   source:
     repoURL: https://github.com/hemantharjunagari/DevOps.git  # Can point to either a Helm chart repo or a git repo.
     targetRevision: f-jenkins-kubernetes  # For Helm, this refers to the chart version.
-    path: platform-services/environments/demo  # This has no meaning for Helm charts pulled directly from a Helm repo instead of git.
+    path: platform-services/environments/demo/  # This has no meaning for Helm charts pulled directly from a Helm repo instead of git.
 
     helm:
       # Helm values files for overriding values in the helm chart
       # The path is relative to the spec.source.path directory defined above
       valueFiles:
+      # - demo-secrets.yaml
       - demo-secrets.yaml
 
       # Optional Helm version to template with. If omitted it will fall back to look at the 'apiVersion' in Chart.yaml
