@@ -1,0 +1,9 @@
+*.ignore
+
+
+# ignore tar files
+*.tar
+*.tar.gz
+*.tgz
+
+*.lock
