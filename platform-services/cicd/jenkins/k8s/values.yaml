@@ -563,14 +563,14 @@ controller:
 
     # Ignored if securityRealm is defined in controller.JCasC.configScripts
     # -- Jenkins Config as Code Security Realm-section
-    securityRealm: |-
-      local:
-        allowsSignup: true
-        enableCaptcha: false
-        users:
-        - id: "${chart-admin-username}"
-          name: "Jenkins Admin"
-          password: "${chart-admin-password}"
+    # securityRealm: |-
+    #   local:
+    #     allowsSignup: true
+    #     enableCaptcha: false
+    #     users:
+    #     - id: "${chart-admin-username}"
+    #       name: "Jenkins Admin"
+    #       password: "${chart-admin-password}"
 
     # Ignored if authorizationStrategy is defined in controller.JCasC.configScripts
     # -- Jenkins Config as Code Authorization Strategy-section
