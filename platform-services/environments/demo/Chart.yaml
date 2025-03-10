@@ -9,3 +9,6 @@ dependencies:
   - name: jenkins
     version: "5.8.10"
     repository: "file://../../cicd/jenkins/k8s"
+    file:
+      - ../../cicd/jenkins/k8s/values.yaml
+      - demo-services.yaml
