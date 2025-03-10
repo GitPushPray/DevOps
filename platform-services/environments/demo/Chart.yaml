@@ -11,4 +11,4 @@ dependencies:
     repository: "file://../../cicd/jenkins/k8s"
     file:
       - ../../cicd/jenkins/k8s/values.yaml
-      - demo-services.yaml
+      - demo-secrets.yaml
