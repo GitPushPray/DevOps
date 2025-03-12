@@ -26,13 +26,15 @@ spec:
     helm:
       # Helm values files for overriding values in the helm chart
       # The path is relative to the spec.source.path directory defined above
-      valueFiles:
+      # valueFiles:
       # - demo-secrets.yaml
-      - demo-secrets.yaml
 
       # Optional Helm version to template with. If omitted it will fall back to look at the 'apiVersion' in Chart.yaml
       # and decide which Helm binary to use automatically. This field can be either 'v2' or 'v3'.
       version: v3
+
+    plugins:
+      name: helm-secrets
 
   # Destination cluster and namespace to deploy the application
   destination:

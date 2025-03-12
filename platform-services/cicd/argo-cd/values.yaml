@@ -426,13 +426,33 @@ configs:
   # Ref: https://argo-cd.readthedocs.io/en/stable/operator-manual/config-management-plugins/
   cmp:
     # -- Create the argocd-cmp-cm configmap
-    create: false
+    create: true
 
     # -- Annotations to be added to argocd-cmp-cm configmap
     annotations: {}
 
     # -- Plugin yaml files to be added to argocd-cmp-cm
-    plugins: {}
+    plugins:
+      helm-secrets:
+        init:
+          command: [sh, -c]
+          args:
+            - |
+              echo "Initializing Helm Secrets Plugin..."
+              helm plugin install https://github.com/jkroepke/helm-secrets
+
+        generate:
+          command: [sh, -c]
+          args:
+            - |
+              helm secrets template . -f platform-services/environments/demo/demo-secrets.yaml
+
+        discover:
+          fileName: "demo-secrets.yaml"
+          find:
+            glob: "platform-services/environments/demo/Chart.yaml"
+            command: [sh, -c, find . -name demo-secrets.yaml]
+
       # --- First plugin
       # my-plugin:
       #   init:
