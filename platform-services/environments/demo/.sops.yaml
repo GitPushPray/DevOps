@@ -1,0 +1,6 @@
+# creation rules are evaluated sequentially, the first match wins
+creation_rules:
+
+    # Rule 1: Encrypt all files in the directory with -secrets.yaml suffix
+    - path_regex: \.*-secrets\.yaml$
+      age: 'age189d5xzamt4xk4h3qgqgg5wa9nnrg6m79uzcqprkz7m94hdhp896qww2qe7'
