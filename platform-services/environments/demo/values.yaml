@@ -41,14 +41,11 @@ jenkins:
     ingress:
       enabled: true
       paths:
-      # - backend:
-      #     serviceName: ssl-redirect
-      #     servicePort: use-annotation
-      - backend:
+      - pathType: ImplementationSpecific
+        backend:
           service:
             name: >-
               {{ template "jenkins.fullname" . }}
-          # Don't use string here, use only integer value!
             port:
               number: 8080
       apiVersion: "extensions/v1beta1"
