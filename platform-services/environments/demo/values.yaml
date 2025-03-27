@@ -1,0 +1,58 @@
+jenkins:
+  kubeTargetVersionOverride: "1.35.2"
+  fullnameOverride: "jenkins"
+  namespaceOverride: "admin"
+  controller:
+    jenkinsUriPrefix: "/jenkins"
+    installPlugins:
+      - kubernetes:4306.vc91e951ea_eb_d
+      - workflow-aggregator:600.vb_57cdd26fdd7
+      - git:5.7.0
+      - configuration-as-code:1932.v75cb_b_f1b_698d
+      - hashicorp-vault-plugin:371.v884a_4dd60fb_6
+      - job-dsl:1.91
+    JCasC:
+      configScripts:
+        welcome-message: |
+          jenkins:
+            systemMessage: Welcome to hemantharjunagari jenkins CI\CD server. This Jenkins is configured and managed 'as code'.
+
+          jobs:
+            - script: >
+                pipelineJob('MyJob') {
+                  definition {
+                    cps {
+                      script("""
+                        pipeline {
+                          agent any
+                          stages {
+                            stage('Build') {
+                              steps {
+                                echo 'Building...'
+                              }
+                            }
+                          }
+                        }
+                      """)
+                      sandbox(true)
+                    }
+                  }
+                }
+    ingress:
+      enabled: true
+      paths:
+      # - backend:
+      #     serviceName: ssl-redirect
+      #     servicePort: use-annotation
+      - backend:
+          service:
+            name: >-
+              {{ template "jenkins.fullname" . }}
+          # Don't use string here, use only integer value!
+            port:
+              number: 8080
+      apiVersion: "extensions/v1beta1"
+      path: "/jenkins"
+      pathType: "ImplementationSpecific"
+      hostName: ""
+      resourceRootUrl:
