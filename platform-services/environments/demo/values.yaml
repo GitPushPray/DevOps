@@ -39,7 +39,7 @@ jenkins:
                   }
                 }
     ingress:
-      enabled: true
+      enabled: false
       hostName: "cluster.local.com"
       paths:
       - pathType: ImplementationSpecific
