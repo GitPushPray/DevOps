@@ -75,10 +75,10 @@ controller:
   admin:
 
     # -- Admin username created as a secret if `controller.admin.createSecret` is true
-    username: "admin"
+    # username: "admin"
     # -- Admin password created as a secret if `controller.admin.createSecret` is true
     # @default -- <random password>
-    password: "admin"
+    # password: "admin"
 
     # -- The key in the existing admin secret containing the username
     userKey: jenkins-admin-user
@@ -543,15 +543,15 @@ controller:
                 }
               }
 
-      jenkins-casc-configs: |
-        credentials:
-          system:
-            domainCredentials:
-              - credentials:
-                  - usernamePassword:
-                      id: "dockerCredentials"
-                      username: "dockerUserName"
-                      password: "mySuperSecretPassword"
+      # jenkins-casc-configs: |
+      #   credentials:
+      #     system:
+      #       domainCredentials:
+      #         - credentials:
+      #             - usernamePassword:
+      #                 id: "dockerCredentials"
+      #                 username: "dockerUserName"
+      #                 password: "mySuperSecretPassword"
 
     # Allows adding to the top-level security JCasC section. For legacy purposes, by default, the chart includes apiToken configurations
     # -- Jenkins Config as Code security-section
@@ -563,14 +563,14 @@ controller:
 
     # Ignored if securityRealm is defined in controller.JCasC.configScripts
     # -- Jenkins Config as Code Security Realm-section
-    securityRealm: |-
-      local:
-        allowsSignup: true
-        enableCaptcha: false
-        users:
-        - id: "${chart-admin-username}"
-          name: "Jenkins Admin"
-          password: "${chart-admin-password}"
+    # securityRealm: |-
+    #   local:
+    #     allowsSignup: true
+    #     enableCaptcha: false
+    #     users:
+    #     - id: "${chart-admin-username}"
+    #       name: "Jenkins Admin"
+    #       password: "${chart-admin-password}"
 
     # Ignored if authorizationStrategy is defined in controller.JCasC.configScripts
     # -- Jenkins Config as Code Authorization Strategy-section
