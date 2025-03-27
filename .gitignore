@@ -1,0 +1,3 @@
+#ignore tar files
+*.tgz
+Chart.lock
