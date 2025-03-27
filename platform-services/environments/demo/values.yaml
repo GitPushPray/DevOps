@@ -49,7 +49,7 @@ jenkins:
               {{ template "jenkins.fullname" . }}
             port:
               number: 8080
-          path: /jenkins
+        path: /jenkins
       apiVersion: "extensions/v1beta1"
       path: "/jenkins"
       pathType: "ImplementationSpecific"
