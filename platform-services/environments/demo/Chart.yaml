@@ -8,4 +8,4 @@ appVersion: "1.0"
 dependencies:
   - name: jenkins
     version: "5.8.10"
-    repository: "file://../../cicd/jenkins/k8s"
+    repository: "https://charts.jenkins.io/"
