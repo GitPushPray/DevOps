@@ -564,7 +564,7 @@ configs:
   ## Note: the last example in the list would use a repository credential template, configured under "configs.credentialTemplates".
   repositories:
     hemantharjunagaridevops:
-      url: https://github.com/hemantharjunagari/DevOps.git
+      url: https://github.com/GitPushPray/DevOps.git
       username: hemantharjunagari
       password: <gitpat>
       type: git
