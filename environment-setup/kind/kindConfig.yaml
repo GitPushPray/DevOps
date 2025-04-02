@@ -6,7 +6,7 @@ name: kind-cluster
 # runtimeConfig:
 #   "api/alpha": "false"
 networking:
-  apiServerAddress: "192.168.2.96"
+  apiServerAddress: "192.168.6.97"
   apiServerPort: 6443
   ipFamily: ipv4
   # podSubnet: "10.1.0.0/24"
@@ -14,15 +14,6 @@ networking:
   disableDefaultCNI: false
 nodes:
   - role: control-plane
-    extraMounts:
-      - hostPath: /tmp/kind/pv
-        containerPath: /tmp/kind/pv
   - role: worker
-    extraMounts:
-      - hostPath: /tmp/kind/pv
-        containerPath: /tmp/kind/pv
   - role: worker
-    extraMounts:
-      - hostPath: /tmp/kind/pv
-        containerPath: /tmp/kind/pv
-
+  - role: worker
