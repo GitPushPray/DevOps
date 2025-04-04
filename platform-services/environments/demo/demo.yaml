@@ -11,6 +11,7 @@ jenkins:
       - configuration-as-code:1932.v75cb_b_f1b_698d
       - hashicorp-vault-plugin:371.v884a_4dd60fb_6
       - job-dsl:1.91
+      - pipeline-utility-steps:2.19.0
     JCasC:
       configScripts:
         welcome-message: |
