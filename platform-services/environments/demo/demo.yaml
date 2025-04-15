@@ -56,3 +56,10 @@ jenkins:
       path: "/jenkins"
       pathType: "ImplementationSpecific"
       resourceRootUrl:
+  additionalAgents:
+    maven:
+      podName: maven
+      customJenkinsLabels: maven
+      image:
+        repository: jenkins/jnlp-agent-maven
+        tag: latest
