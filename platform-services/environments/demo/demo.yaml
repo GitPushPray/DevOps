@@ -61,8 +61,8 @@ jenkins:
       podName: maven
       customJenkinsLabels: maven
       image:
-        repository: jenkins/jnlp-agent-maven
-        tag: jdk11
-  agent:
-    image:
-      tag: 3107.v665000b_51092
+        repository: maven
+        tag: latest
+  # agent:
+  #   image:
+  #     tag: 3107.v665000b_51092
