@@ -62,4 +62,4 @@ jenkins:
       customJenkinsLabels: maven
       image:
         repository: jenkins/jnlp-agent-maven
-        tag: 3107.v665000b_51092-6
+        tag: jdk11
