@@ -63,3 +63,6 @@ jenkins:
       image:
         repository: jenkins/jnlp-agent-maven
         tag: jdk11
+  agent:
+    image:
+      tag: 3107.v665000b_51092
