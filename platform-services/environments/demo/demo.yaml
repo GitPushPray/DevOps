@@ -12,6 +12,7 @@ jenkins:
       - hashicorp-vault-plugin:371.v884a_4dd60fb_6
       - job-dsl:1.91
       - pipeline-utility-steps:2.19.0
+      - github-oauth:651.v135e939e8b_60
     JCasC:
       configScripts:
         welcome-message: |
